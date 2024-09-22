@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, Rocket, Atom, Code } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // Import Swiper styles
 import 'swiper/css';
@@ -9,12 +10,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function CombinedSection() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const courses = [
     { icon: Rocket, title: 'Starter (12-16)', code: 'ST-652', color: 'bg-sky-500' },
     { icon: Rocket, title: 'Starter (12-16)', code: 'ST-654', color: 'bg-blue-500' },
     { icon: Atom, title: 'Programming (Front-end)', code: 'FRONT-826', color: 'bg-indigo-500' },
     { icon: Code, title: 'Programming (Back-end)', code: 'BACK-728', color: 'bg-purple-500' },
   ];
+
+  const handlePlayClick = () => {
+    navigate('/monkey-type'); // Navigate to MonkeyType component
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-4">
@@ -124,6 +131,7 @@ export default function CombinedSection() {
             <ChevronRight className="text-gray-800" />
           </div>
         </Swiper>
+        
       </section>
     </div>
   );
@@ -131,7 +139,7 @@ export default function CombinedSection() {
 
 function CourseCard({ icon: Icon, title, code, color }) {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden mb-4">
       <div className={`${color} p-6 flex justify-center items-center`}>
         <Icon className="w-16 h-16 text-white" />
       </div>
