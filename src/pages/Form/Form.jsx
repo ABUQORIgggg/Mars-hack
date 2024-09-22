@@ -20,15 +20,18 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Post Data:", postData); // Add this line for debugging
+  
+    console.log("Submitting post data:", postData); // Log the data before submitting
   
     if (currentId === 0) {
-      dispatch(createPost({ ...postData, name: user?.result?.name }));
+      dispatch(createPost({ ...postData, name: user?.result?.name })); // Create a new post
     } else {
-      dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
+      dispatch(updatePost(currentId, { ...postData, name: user?.result?.name })); // Update an existing post
     }
-    clear();
+    clear(); // Clear the form after submission
   };
+  
+  
   
 
   return (
