@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StarIcon } from "lucide-react";
 import { LuImagePlus } from "react-icons/lu";
+import CourseSwiper from '../../pages/Home/Course';
 
 export default function ProfileSidebar() {
   const [profileImage, setProfileImage] = useState("https://img.freepik.com/premium-photo/default-male-user-icon-blank-profile-image-green-background-profile-picture-icon_962764-98397.jpg");
@@ -16,7 +17,7 @@ export default function ProfileSidebar() {
   };
 
   return (
-    <aside className="w-3/1 bg-base-100 shadow-lg h-screen p-4 rounded-xl">
+    <aside className="max-w-[30%] w-full min-w-[30%] bg-base-100 shadow-lg h-screen p-4 rounded-xl">
       <div className="max-w-sm mx-auto">
         <div className="p-6 space-y-4">
           <div className="flex justify-center">
@@ -116,6 +117,7 @@ export default function ProfileSidebar() {
             </div>
             <button className="bg-[#FF6347] text-white px-4 py-2 rounded-full">Играть</button>
           </div>
+         
         </div>
       </div>
     </aside>
