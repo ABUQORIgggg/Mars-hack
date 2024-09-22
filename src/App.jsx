@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
+  const [profileImage, setProfileImage] = useState("https://img.freepik.com/premium-photo/default-male-user-icon-blank-profile-image-green-background-profile-picture-icon_962764-98397.jpg");
   const location = useLocation();
 
   // Check if the current path is '/space-shop'
@@ -16,7 +17,7 @@ function App() {
 
       <div className="flex-1 flex flex-col">
         <header>
-          <Navbar />
+          <Navbar profileImage={profileImage} />
         </header>
 
         {/* Main Content */}

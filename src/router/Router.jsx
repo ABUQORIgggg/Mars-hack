@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loadable from "../components/Loadable/Loadable";
 import Blog from "../pages/Blog/Blog";
 import Shop from "../pages/Shop/Shop";
+import CombinedSection from "../pages/Home/Monkentype"; // Ensure this path is correct
+import MonkeyType from "../pages/Home/Monkentype";
 import ShopHistory from "../pages/Shop-Hisotry/ShopHistory";
 import Login from "../pages/Login/Login";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute"; // Import PrivateRoute
@@ -46,6 +48,14 @@ const RouterConfig = () => {
         {
           path: "/space-history",
           element: <ShopHistory />,
+        },
+        {
+          path: "/combined-section",
+          element: <CombinedSection />,
+        },
+        {
+          path: "/monkey-type",
+          element: <MonkeyType />,
         },
         {
           path: "/posts",

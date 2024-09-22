@@ -2,9 +2,9 @@ import React from 'react';
 import SelectNav from './SelectNav';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ profileImage }) => {
   return (
-    <div className="navbar bg-base-100 shadow-xl py-3">
+    <div className="navbar bg-base-100 shadow-xl py-3 fixed z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="navbar-start">
           <div className="max-w-[100px]">
@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="size-10 rounded-full">
               <img
                 className="object-cover"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                src={profileImage} // Use the profileImage prop
                 alt="User Avatar"
               />
             </div>

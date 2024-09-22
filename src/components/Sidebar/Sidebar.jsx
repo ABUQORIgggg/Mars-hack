@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { StarIcon } from "lucide-react";
 import { LuImagePlus } from "react-icons/lu";
-import CourseSwiper from '../../pages/Home/Course';
+import { Link } from 'react-router-dom';
 
-export default function ProfileSidebar() {
-  const [profileImage, setProfileImage] = useState("https://img.freepik.com/premium-photo/default-male-user-icon-blank-profile-image-green-background-profile-picture-icon_962764-98397.jpg");
+export default function ProfileSidebar({ profileImage, setProfileImage }) {
   const [showAvatars, setShowAvatars] = useState(false);
 
   const handleImageClick = () => {
@@ -12,7 +11,7 @@ export default function ProfileSidebar() {
   };
 
   const handleAvatarSelect = (avatarUrl) => {
-    setProfileImage(avatarUrl);
+    setProfileImage(avatarUrl); // Update the image in the parent state
     setShowAvatars(false);
   };
 
@@ -59,7 +58,6 @@ export default function ProfileSidebar() {
             </div>
           )}
 
-          {/* Rest of the sidebar content */}
           <div className="text-center">
             <p className="text-[#FF6347]">Levels</p>
             <div className="flex justify-center space-x-1 mt-1">
@@ -115,9 +113,8 @@ export default function ProfileSidebar() {
               <h3 className="text-xl font-bold text-white">Mars Games</h3>
               <p className="text-sm text-[#87CEFA]">Учитесь с играми</p>
             </div>
-            <button className="bg-[#FF6347] text-white px-4 py-2 rounded-full">Играть</button>
+            <Link to="/monkey-type"><button className="bg-[#FF6347] text-white px-4 py-2 rounded-full">Играть</button></Link>
           </div>
-         
         </div>
       </div>
     </aside>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, Rocket, Atom, Code } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // Import Swiper styles
 import 'swiper/css';
@@ -9,6 +10,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function CombinedSection() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const courses = [
     { icon: Rocket, title: 'Starter (12-16)', code: 'ST-652', color: 'bg-sky-500' },
     { icon: Rocket, title: 'Starter (12-16)', code: 'ST-654', color: 'bg-blue-500' },
@@ -16,13 +19,17 @@ export default function CombinedSection() {
     { icon: Code, title: 'Programming (Back-end)', code: 'BACK-728', color: 'bg-purple-500' },
   ];
 
+  const handlePlayClick = () => {
+    navigate('/monkey-type'); // Navigate to MonkeyType component
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-4">
       <section className="mb-8">
         <h1 className="text-3xl font-bold mb-4 text-[#1E3A8A] flex items-center gap-2">
           <span className="text-4xl">🎉</span> Новости
         </h1>
-        
+
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={50}
@@ -36,16 +43,28 @@ export default function CombinedSection() {
         >
           <SwiperSlide>
             <div className="bg-gradient-to-r from-orange-400 to-yellow-400 p-8 text-white rounded-2xl relative h-64">
-            <img src="https://lab.marsit.uz/media/news/880x300.png" alt="" />
+              <img
+                src="https://lab.marsit.uz/media/news/880x300.png"
+                alt=""
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-8 text-white rounded-2xl h-64">
-           <img src="https://lab.marsit.uz/media/news/Space_oktyabr_380x1050.png" alt="" />
+              <img
+                src="https://lab.marsit.uz/media/news/Space_oktyabr_380x1050.png"
+                alt=""
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
           </SwiperSlide>
-          <div className="swiper-button-prev"><ChevronLeft className="text-white" /></div>
-          <div className="swiper-button-next"><ChevronRight className="text-white" /></div>
+          <div className="swiper-button-prev">
+            <ChevronLeft className="text-white" />
+          </div>
+          <div className="swiper-button-next">
+            <ChevronRight className="text-white" />
+          </div>
         </Swiper>
       </section>
 
@@ -105,9 +124,14 @@ export default function CombinedSection() {
               <CourseCard {...course} />
             </SwiperSlide>
           ))}
-          <div className="swiper-button-prev"><ChevronLeft className="text-gray-800" /></div>
-          <div className="swiper-button-next"><ChevronRight className="text-gray-800" /></div>
+          <div className="swiper-button-prev">
+            <ChevronLeft className="text-gray-800" />
+          </div>
+          <div className="swiper-button-next">
+            <ChevronRight className="text-gray-800" />
+          </div>
         </Swiper>
+        
       </section>
     </div>
   );
@@ -115,7 +139,7 @@ export default function CombinedSection() {
 
 function CourseCard({ icon: Icon, title, code, color }) {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden mb-4">
       <div className={`${color} p-6 flex justify-center items-center`}>
         <Icon className="w-16 h-16 text-white" />
       </div>
