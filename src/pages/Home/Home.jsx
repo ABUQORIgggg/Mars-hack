@@ -22,7 +22,7 @@ export default function CombinedSection() {
         <h1 className="text-3xl font-bold mb-4 text-[#1E3A8A] flex items-center gap-2">
           <span className="text-4xl">🎉</span> Новости
         </h1>
-        
+
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={50}
@@ -36,16 +36,28 @@ export default function CombinedSection() {
         >
           <SwiperSlide>
             <div className="bg-gradient-to-r from-orange-400 to-yellow-400 p-8 text-white rounded-2xl relative h-64">
-            <img src="https://lab.marsit.uz/media/news/880x300.png" alt="" />
+              <img
+                src="https://lab.marsit.uz/media/news/880x300.png"
+                alt=""
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-8 text-white rounded-2xl h-64">
-           <img src="https://lab.marsit.uz/media/news/Space_oktyabr_380x1050.png" alt="" />
+              <img
+                src="https://lab.marsit.uz/media/news/Space_oktyabr_380x1050.png"
+                alt=""
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
           </SwiperSlide>
-          <div className="swiper-button-prev"><ChevronLeft className="text-white" /></div>
-          <div className="swiper-button-next"><ChevronRight className="text-white" /></div>
+          <div className="swiper-button-prev">
+            <ChevronLeft className="text-white" />
+          </div>
+          <div className="swiper-button-next">
+            <ChevronRight className="text-white" />
+          </div>
         </Swiper>
       </section>
 
@@ -105,8 +117,12 @@ export default function CombinedSection() {
               <CourseCard {...course} />
             </SwiperSlide>
           ))}
-          <div className="swiper-button-prev"><ChevronLeft className="text-gray-800" /></div>
-          <div className="swiper-button-next"><ChevronRight className="text-gray-800" /></div>
+          <div className="swiper-button-prev">
+            <ChevronLeft className="text-gray-800" />
+          </div>
+          <div className="swiper-button-next">
+            <ChevronRight className="text-gray-800" />
+          </div>
         </Swiper>
       </section>
     </div>
