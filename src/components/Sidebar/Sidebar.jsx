@@ -94,7 +94,7 @@ export default function ProfileSidebar() {
             <div className="flex justify-between items-center mb-2">
               <div className="flex items-center space-x-2">
                 <div className="bg-[#4169E1] rounded-full p-2">
-                  <span className="text-white font-bold">25</span>
+                  <span className="text-white font-bold">24</span>
                 </div>
                 <div>
                   <p className="font-bold text-gray-700">25x Davomat</p>
