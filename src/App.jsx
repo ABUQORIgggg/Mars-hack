@@ -1,20 +1,28 @@
-import { useState } from 'react'
-import './App.css'
-import { Outlet } from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
-
   return (
-    <>
-    <header>
-      <Navbar/>
-    </header>
-    <main>
-      <Outlet />
-    </main>
-    </>
-  )
+    <div className="flex">
+      {/* Sidebar */}
+      
+
+      <div className="flex-1 flex flex-col">
+        {/* Navbar */}
+        <header>
+          <Navbar />
+        </header>
+
+        {/* Main Content */}
+        <main className="p-6 flex-1 flex">
+        <Sidebar />
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
