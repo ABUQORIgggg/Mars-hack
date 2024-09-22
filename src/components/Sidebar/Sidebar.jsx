@@ -17,7 +17,7 @@ export default function ProfileSidebar() {
   };
 
   return (
-    <aside className="w-3/1 bg-base-100 shadow-lg h-screen p-4 rounded-xl">
+    <aside className="max-w-[30%] w-full min-w-[30%] bg-base-100 shadow-lg h-screen p-4 rounded-xl">
       <div className="max-w-sm mx-auto">
         <div className="p-6 space-y-4">
           <div className="flex justify-center">

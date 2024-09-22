@@ -15,7 +15,6 @@ function App() {
       
 
       <div className="flex-1 flex flex-col">
-        {/* Navbar */}
         <header>
           <Navbar />
         </header>
