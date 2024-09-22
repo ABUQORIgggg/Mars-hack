@@ -42,9 +42,9 @@ const Blog = () => {
   };
 
   return (
-    <div className="flex gap-[8%] px-4 py-6">
+    <div className="flex gap-[8%] px-4 py-6 ">
       {/* Posts Section */}
-      <div className="w-2/3">
+      <div className="w-8/12">
         <h2 className="text-2xl text-blue-800 font-semibold mb-4">Посты</h2>
         
         {posts.map((post) => (
@@ -97,7 +97,7 @@ const Blog = () => {
         ))}
       </div>
 
-      <div className="w-1/3">
+      <div className="w-4/12">
         <h2 className="text-2xl text-blue-800 font-semibold mb-4">Друзья</h2>
         
         {friends.map((friend) => (

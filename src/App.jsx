@@ -17,8 +17,8 @@ function App() {
 
         {/* Main Content */}
         <main className="p-6 flex-1 flex container mx-auto max-w-[92%] ">
-        <Sidebar />
-          <Outlet />
+            <Sidebar />
+            <Outlet />
         </main>
       </div>
     </div>
