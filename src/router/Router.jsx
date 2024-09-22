@@ -5,6 +5,9 @@ import Blog from "../pages/Blog/Blog";
 import Shop from "../pages/Shop/Shop";
 import CombinedSection from "../pages/Home/Monkentype"; // Ensure this path is correct
 import MonkeyType from "../pages/Home/Monkentype";
+import ShopHistory from "../pages/Shop-Hisotry/ShopHistory";
+import Login from "../pages/Login/Login";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute"; // Import PrivateRoute
 
 const App = Loadable(lazy(() => import("../App")));
 const Home = Loadable(lazy(() => import("../pages/Home/Home")));
@@ -17,15 +20,31 @@ const RouterConfig = () => {
       children: [
         {
           path: "/main",
-          element: <Home />,
+          element: (
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          ),
         },
         {
           path: "/blog",
-          element: <Blog />,
+          element: (
+            <PrivateRoute>
+              <Blog />
+            </PrivateRoute>
+          ),
         },
         {
           path: "/space-shop",
-          element: <Shop />,
+          element: (
+            <PrivateRoute>
+              <Shop />
+            </PrivateRoute>
+          ),
+        },
+        {
+          path: "/space-history",
+          element: <ShopHistory />,
         },
         {
           path: "/combined-section",
@@ -36,6 +55,10 @@ const RouterConfig = () => {
           element: <MonkeyType />,
         },
       ],
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 
