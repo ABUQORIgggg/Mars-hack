@@ -16,7 +16,7 @@ function App() {
         </header>
 
         {/* Main Content */}
-        <main className="p-6 flex-1 flex">
+        <main className="p-6 flex-1 flex container mx-auto max-w-[92%] ">
         <Sidebar />
           <Outlet />
         </main>
