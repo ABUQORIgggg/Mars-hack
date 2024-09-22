@@ -6,12 +6,15 @@ import Shop from "../pages/Shop/Shop";
 
 const App = Loadable(lazy(() => import("../App")));
 const Home = Loadable(lazy(() => import("../pages/Home/Home")));
+const Posts = Loadable(lazy(() => import("../pages/Posts/Posts")));
+const Form = Loadable(lazy(() => import("../pages/Form/Form")));
+const AllPosts = Loadable(lazy(() => import("../pages/PostsHome/Home")));
 
 const RouterConfig = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App/>,
+      element: <App />,
       children: [
         {
           path: "/main",
@@ -24,6 +27,14 @@ const RouterConfig = () => {
         {
           path: "/space-shop",
           element: <Shop />,
+        },
+        {
+          path: "/posts",
+          element: <Posts />,
+        },
+        {
+          path: "/allposts",
+          element: <AllPosts />,
         },
       ],
     },

@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectNav from './SelectNav';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -14,9 +15,12 @@ const Navbar = () => {
           <SelectNav />
         </div>
         <div className="navbar-end flex gap-5 items-center">
-          <button className="border border-red-500 text-red-500 cursor-pointer px-6 py-3 rounded-xl font-semibold">
-            + Создать пост
-          </button>
+          <Link to={"/posts/create"}>
+
+            <button className="border border-red-500 text-red-500 cursor-pointer px-6 py-3 rounded-xl font-semibold">
+              + Создать пост
+            </button>
+          </Link>
           <div className="avatar">
             <div className="size-10 rounded-full">
               <img
