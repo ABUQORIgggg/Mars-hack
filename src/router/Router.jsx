@@ -11,6 +11,9 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute"; // Import Pr
 
 const App = Loadable(lazy(() => import("../App")));
 const Home = Loadable(lazy(() => import("../pages/Home/Home")));
+const Posts = Loadable(lazy(() => import("../pages/Posts/Posts")));
+const Form = Loadable(lazy(() => import("../pages/Form/Form")));
+const AllPosts = Loadable(lazy(() => import("../pages/PostsHome/Home")));
 
 const RouterConfig = () => {
   const router = createBrowserRouter([
@@ -53,6 +56,14 @@ const RouterConfig = () => {
         {
           path: "/monkey-type",
           element: <MonkeyType />,
+        },
+        {
+          path: "/posts",
+          element: <Posts />,
+        },
+        {
+          path: "/allposts",
+          element: <AllPosts />,
         },
       ],
     },
